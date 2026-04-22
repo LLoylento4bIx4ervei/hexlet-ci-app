@@ -10,6 +10,11 @@ jobs:
       - name: Checkout code
         uses: actions/checkout@v4
 
+      - name: Install JS
+        uses: actions/setup-node@v4
+        with: 
+          node-version: '18'
+    
       - name: Setup project
         run: make setup
 
@@ -18,3 +23,6 @@ jobs:
 
       - name: Run tests
         run: make test
+
+      - name: Hello
+        uses: hexlet-components/hello-from-hexlet-action@release 
